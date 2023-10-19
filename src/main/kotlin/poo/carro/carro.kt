@@ -1,4 +1,4 @@
-package poo
+package poo.carro
 
 class Carro {
     private var pass: Int = 0

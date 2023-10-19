@@ -1,4 +1,4 @@
-package poo
+package poo.carro
 
 fun main() {
     val car = Carro()

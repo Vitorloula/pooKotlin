@@ -17,6 +17,7 @@ fun main() {
                     "100" -> pig?.addCoin(Coin.C100)
                 }
             }
+
             "init" -> {
                 val volumeMax = args[1].toIntOrNull()
                 if (volumeMax != null && volumeMax > 0) {
@@ -25,23 +26,29 @@ fun main() {
                     println("fail: volume máximo inválido")
                 }
             }
+
             "addItem" -> {
                 pig?.addItem(Item(args[1], args[2].toInt()))
             }
+
             "break" -> {
                 pig?.breakPig()
             }
+
             "extractCoins" -> {
                 val coins = pig?.extractCoins() ?: 0.0
                 println(coins)
             }
+
             "extractItems" -> {
                 val items = pig?.extractItems()?.joinToString(", ") ?: ""
                 println(items)
             }
+
             "show" -> {
                 println(pig)
             }
+
             else -> {
                 println("fail: comando inválido")
             }

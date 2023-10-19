@@ -56,7 +56,11 @@ class Pig(private val volumeMax: Int) {
         val volume = getVolume()
         val volumeRatio = if (broken) "1" else "$volume/${getVolumeMax()}"
 
-        return "state = ${if (isBroken()) "broken" else "intact"} : coins = [$coinStr] : items=[$itemStr] : value = ${"%.2f".format(value)} : volume = $volumeRatio"
+        return "state = ${if (isBroken()) "broken" else "intact"} : coins = [$coinStr] : items=[$itemStr] : value = ${
+            "%.2f".format(
+                value
+            )
+        } : volume = $volumeRatio"
     }
 
     private fun getVolume(): Int {
@@ -71,9 +75,9 @@ class Pig(private val volumeMax: Int) {
         return coins.sumOf { it.getValue() }
     }
 
-   private fun getVolumeMax(): Int {
+    private fun getVolumeMax(): Int {
         return volumeMax
-   }
+    }
 
     private fun isBroken(): Boolean {
         return broken
